@@ -1,0 +1,246 @@
+body {
+    background-image:url('https://i.fbcd.co/products/resized/resized-750-500/a-beautiful-background-for-the-worlds-book-day-8-09ffa8ff10b6ad125c8582077b2db8aeee284702f0843ce4970c668d436c6cd9.jpg');
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Work Sans', sans-serif;
+    display: :flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  hr {
+    border: 0.2px solid #4a4141;
+    width: 80vw;
+  }
+  
+  h1 {
+    margin: 25px;
+    text-align: center;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 45px;
+    color:  #023205;
+  }
+  
+  a {
+    cursor: :pointer;
+    text-decoration: none;
+    color: #158b7b;
+  }
+  
+  /*********************************
+                Nav bar 
+  **********************************/
+  .nav-bar {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  
+  .nav-items {
+    padding: 0;
+    margin: 20px 10px;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: 17.5px;
+    font-family: 'Josefin Slab', serif;
+  }
+  
+  .nav-items a {
+    text-decoration: none;
+      color: #023205;
+  
+  }
+  
+  .nav-items a:hover {
+    text-decoration: none;
+    color: #023205;
+    text-shadow: 2px 2px 4px #4a4141;
+    bu
+  }
+  
+  /*********************************
+              Main page 
+  **********************************/
+   
+  @keyframes move {
+    0% {
+      transform: scale(1) translate(10px, -30px);
+    }
+  
+    40% {
+      transform: scale(0.8, 1) translate(80px, 30px) rotate(160deg);
+    }
+  
+    80% {
+      transform: scale(1.3) translate(0px, 50px) rotate(-20deg);
+    }
+  
+    100% {
+      transform: scale(1) translate(10px, -30px);
+    }
+  }
+  
+  /*********************************
+               User cred 
+  **********************************/
+  .usercred-box {
+    width: 230px;
+    margin: 100px auto;
+    padding: 20px 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 9px 0 rgb(0 0 0 / 20%);
+    background: #bfbcb6;
+  }
+  
+  .usercred-title {
+    margin-bottom: 15px;
+    font-family: 'Bodoni Moda';
+    text-align: center;
+  }
+  
+  .usercred-form {
+    margin: 7px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .usercred-form input {
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 3px 15px;
+  }
+  
+  .usercred-form input[type=submit] {
+    width: 90px;
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 0px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #5a726e;
+    color: white;
+    font-family: 'Josefin Slab', serif;
+    align-self: center;
+  }
+  
+  .usercred-form input[type=submit]:hover,
+  input[type=submit]:focus {
+    color: #edddbd;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 20%);
+  
+  }
+  
+  .usercred-form input:hover,
+  input:focus {
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.1);
+    outline-width: 0;
+  }
+  
+  
+  
+  /*********************************
+          User page box 
+  **********************************/
+  #condition {
+    border-style: none;
+    border-radius: 5px;
+    padding: 0px 10px;
+    width: 200px;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .logo {
+    width: 100px;  
+    height: 100px;  
+    border-radius: 50%;  
+    object-fit: cover; 
+    border: 2px solid #000;  
+  }
+  .about {
+    background-color: rgba(0, 0, 0, 0.5);  
+    color: white;  
+    padding: 20px;  
+    border-radius: 10px;  
+    width: 500px;  
+    margin: 20px auto; 
+    text-align: center;  
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);  
+  }
+  /*********************************
+          Contact Box
+  **********************************/
+    
+  .contact-box {
+    width: 80%;
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #bfbcb6;
+    border-radius: 10px;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  /* Contact Form */
+  .contact-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  /* Contact Form */
+  .contact-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form label {
+    font-family: 'Josefin Slab', serif;
+    font-size: 18px;
+    color: #023205;
+    text-align: left;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .contact-form input[type=submit] {
+    background-color: #5a726e;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form input[type=submit]:hover {
+    background-color: #4a5f56;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form input:focus, .contact-form textarea:focus {
+    outline-color: #5a726e;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.1);
+  }
