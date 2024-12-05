@@ -9,9 +9,8 @@
 </head>
 <body>
     <header>
-    <a class="nav-link btn btn-primary text-white" href="login.html"
-                >Login</a
-              >
+    <a  href="login.html">Login</a>
+              
             <div class="logo-container">
                 <img src="image/logo.png" alt="Logo" class="logo">
                 
