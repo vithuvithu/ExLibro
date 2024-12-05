@@ -9,9 +9,9 @@
 <body>
     <header class="navbar">
         <div class="logo-container">
-            <?php
- echo'<img src="logo.png"alt="Logo" class="logo">';
-            ?>
+             
+ <img src="image/logo.png"alt="Logo" class="logo">';
+             
            
             
         </div>
