@@ -9,7 +9,7 @@
 <body>
     <header class="navbar">
         <div class="logo-container">
-            <img src="ExLibro/Front end/image/logo.jpg" alt="Logo" class="logo">
+            <img src="/workspaces/ExLibro/ExLibro/Front end/image/logo.png"alt="Logo" class="logo">
             
         </div>
         <h1> <b> EXLIBRO </b> </h1>
