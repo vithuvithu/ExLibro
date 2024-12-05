@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About ExLibro</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <header>
-    <a href="home.html">Home</a></Home>
+    <a class="nav-link btn btn-primary text-white" href="login.html"
+                >Login</a
+              >
             <div class="logo-container">
                 <img src="image/logo.png" alt="Logo" class="logo">
                 
