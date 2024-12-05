@@ -10,7 +10,7 @@
     <header class="navbar">
         <div class="logo-container">
             <?php
- echo'<img src="/workspaces/ExLibro/ExLibro/Front end/image/logo.png"alt="Logo" class="logo">';
+ echo'<img src="workspaces/ExLibro/ExLibro/Front end/image/logo.png"alt="Logo" class="logo">';
             ?>
            
             
