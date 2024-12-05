@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-    <a  href="Front end/login.php">Login</a>
+    
               
             <div class="logo-container">
                 <img src="image/logo.png" alt="Logo" class="logo">
@@ -22,9 +22,9 @@
                         <ul class="nav-items">
                             <b><li><a href="#">   Home</a></li></b>
                             <b><li><a href="#">About</a></li></b>
-                           <b><li><a href="#">Login</a></li></b> 
+                           <b><li><a href="login.php">Login</a></li></b> 
                             <b><li><a href="#">Contact</a></li></b>
-                        </ul>
+                        </ul> 
                     </div>
                 </ul>
             </nav>
