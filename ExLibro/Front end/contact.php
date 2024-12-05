@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-         
+    <a href="home.html">Home</a></Home>
             <div class="logo-container">
                 <img src="image/logo.png" alt="Logo" class="logo">
                 
