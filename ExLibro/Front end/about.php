@@ -9,7 +9,8 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="image/logo.jpg" alt="Logo" class="logo">
+            <img src="image/logo.png" alt="Logo" class="logo">
+            
             
         </div>
         <h1> <b> EXLIBRO </b> </h1>
