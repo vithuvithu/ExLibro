@@ -1,9 +1,11 @@
 <?php
 //get the db connection file
- require_once 'dbconnection.php';
+ require_once 'dbconf.php';
 try {
 //Query
-$sql = "SELECT * FROM  user";
+$sql = "SELECT * FROM  users";
+$sql = "SELECT * FROM  users";
+$sql = "SELECT * FROM  users";
 
 //excute the quey
 $result = mysqli_query($connect, $sql);
