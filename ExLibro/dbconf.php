@@ -6,7 +6,7 @@ define('PASSWORD', 'mariadb');
 define('DBNAME', 'ExLibro');
 try {
 //connect with database
-$connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DBNAME);
+$connect = mysqli_connect($SERVERNAME,$USERNAME,$PASSWORD,$DBNAME);
 if (!$connect) {
 die("connection failed".mysqli_connect_error());
 }

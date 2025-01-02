@@ -42,7 +42,7 @@
       </label>
       <div class ="login-links">
             <input type="submit" value="Login"> <br>
-             <span class="Sign_up">Don't have an account?<a href="#">Sign up</a></span>
+             <span class="Sign_up">Don't have an account?<a href="register.php">Sign up</a></span>
          
       
      
