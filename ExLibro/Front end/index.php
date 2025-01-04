@@ -19,7 +19,7 @@
         <nav>
             <div class="nav-bar">
                 <ul class="nav-items">
-                    <b><li><a href="home.php"><span style="position: relative; left: 80px;">Home</span></a></li></b>
+                    <b><li><a href="index.php"><span style="position: relative; left: 80px;">Home</span></a></li></b>
                     <b> <li><a href="about.php"><span style="position: relative; left: 80px;">About</span></a></li></b>
                     <b><li><a href="login.php"><span style="position: relative; left: 80px;">Login</span></a></li></b>
                    <b><li><a href="contact.php"><span style="position: relative; left: 80px;">Contact</span></a></li></b>
