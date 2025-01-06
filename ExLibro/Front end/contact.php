@@ -20,7 +20,7 @@
                 <ul class="nav-items">
                     <div class="nav-bar">
                         <ul class="nav-items">
-                            <b><li><a href="home.php">   Home</a></li></b>
+                            <b><li><a href="index.php">   Home</a></li></b>
                             <b><li><a href="about.php">About</a></li></b>
                            <b><li><a href="login.php">Login</a></li></b> 
                             <b><li><a href="contact.php">Contact</a></li></b>
