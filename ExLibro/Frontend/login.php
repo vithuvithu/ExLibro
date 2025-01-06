@@ -30,7 +30,8 @@
         <h2 class="usercred-title">Login</h2>
         
         <!-- Form to handle user login -->
-        <form class="usercred-form" action="login_process.php" method="POST">
+         
+        <form class="usercred-form" action="Backend/login_process.php" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             
@@ -40,6 +41,7 @@
             </label>
             
             <div class="login-links">
+            
                 <input type="submit" value="Login"> <br>
                 <span class="Sign_up">Don't have an account? <a href="register.php">Sign up</a></span>
             </div>

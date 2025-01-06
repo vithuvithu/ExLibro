@@ -1,7 +1,10 @@
 <?php
 // Include your database configuration file
-include('dbconf.php');
+include('dbconf.php'); // Adjust the path as necessary
 session_start();
+
+// Debugging output
+echo "Script started. <br>";
 
 // Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -10,9 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $remember = isset($_POST['remember']) ? true : false;
 
-    // Check if user exists in the database
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = $conn->query($sql);
+    // Debugging output
+    echo "Form submitted. Username: $username <br>";
+
+    // Prepare the SQL statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username); // "s" indicates the type is string
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Fetch user data
@@ -30,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
             // Redirect to the user profile page or dashboard
-            header("Location: Frontend/profile.php");
+            header("Location: ../Frontend/profile.php");  
             exit();
         } else {
             // Incorrect password
@@ -38,8 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         // No user found
-        echo "User not found.";
+        echo "User  not found.";
     }
+
+    // Close the statement
+    $stmt->close();
 }
 
 // Close the database connection
