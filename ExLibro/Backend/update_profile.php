@@ -2,20 +2,27 @@
 include('dbconf.php');
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $user_id = $_SESSION['user_id']; // Assuming user_id is stored in the session
-
-    $sql = "UPDATE users SET username='$username', email='$email' WHERE id='$user_id'";
-
-    if ($conn->query($sql) === TRUE) {
-        header("Location: Front end/profile.php");
-        exit();
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
+// Ensure the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
 }
 
-$conn->close();
+// Get the user data from the form
+$user_id = $_SESSION['user_id'];
+$username = $_POST['username'];
+$email = $_POST['email'];
+
+// Update query
+$sql = "UPDATE users SET username='$username', email='$email' WHERE id='$user_id'";
+
+// Execute the update query
+if ($conn->query($sql) === TRUE) {
+    echo "Profile updated successfully!";
+    // Optionally, you can redirect to the profile page or show a success message
+    header('Location: profile.php'); // Assuming you have a profile page
+    exit();
+} else {
+    echo "Error updating profile: " . $conn->error;
+}
 ?>
