@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
             // Redirect to the user profile page or dashboard
-            header("Location: Front end/profile.php");
+            header("Location: Frontend/profile.php");
             exit();
         } else {
             // Incorrect password
