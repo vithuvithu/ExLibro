@@ -1,18 +1,37 @@
 <?php
-include('dbconf.php');
-session_start();
+session_start(); // Start the session
 
-// Fetch books from the database
-$sql = "SELECT id, title, author, description FROM books"; // Fetch more details
+// Include the database configuration
+include('../Backend/dbconf.php'); // Corrected path to dbconf.php
+
+// Initialize search variable
+$search = '';
+
+// Check if the search form is submitted
+if (isset($_POST['search'])) {
+    $search = trim($_POST['search']);
+}
+
+// Fetch books from the database with search functionality
+$sql = "SELECT id, title, author, description FROM books";
+if ($search) {
+    // Sanitize the search input
+    $search = $conn->real_escape_string($search);
+    $sql .= " WHERE title LIKE '%$search%' OR author LIKE '%$search%'";
+}
+
 $result = $conn->query($sql);
-$books = [];
 
+// Check for query execution errors
+if (!$result) {
+    die("Query failed: " . $conn->error);
+}
+
+$books = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $books[] = $row;
     }
-} else {
-    $books = [];
 }
 ?>
 
@@ -45,6 +64,12 @@ if ($result->num_rows > 0) {
     
     <main>
         <h2>Books Available for Exchange</h2>
+
+        <!-- Search Form -->
+        <form method="POST" action="">
+            <input type="text" name="search" placeholder="Search by title or author" value="<?php echo htmlspecialchars($search); ?>">
+            <input type="submit" value="Search">
+        </form>
         
         <?php if (count($books) > 0): ?>
             <table>

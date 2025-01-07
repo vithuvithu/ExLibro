@@ -1,4 +1,12 @@
- 
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); // Redirect to login if not logged in
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,27 +25,24 @@
         <nav>
             <div class="nav-bar">
                 <ul class="nav-items">
-                    <b><li><a href="index.php"><span style="position: relative; left: 80px;">Home</span></a></li></b>
-                    <b><li><a href="about.php"><span style="position: relative; left: 80px;">About</span></a></li></b>
-                    <b><li><a href="contact.php"><span style="position: relative; left: 80px;">Contact</span></a></li></b>
-                    <b><li><a href="logout.php"><span style="position: relative; left: 80px;">Logout</span></a></li></b>
+                    <b><li><a href="index.php">Home</a></li></b>
+                    <b><li><a href="about.php">About</a></li></b>
+                    <b><li><a href="contact.php">Contact</a></li></b>
+                    <b><li><a href="logout.php">Logout</a></li></b>
                 </ul>
             </div>
         </nav>
     </header>
 
-     
     <div class="usercred-box">
-        <h2 class="usercred-title",a>Add Book</h2>
-        <form class="usercred-form">
+        <h2 class="usercred-title">Add Book</h2>
         <form action="submit_book.php" method="POST">
             <input type="text" name="title" placeholder="Book Title" required>
             <input type="text" name="author" placeholder="Author" required>
-            <textarea name="description" placeholder="Description" rows="5" required></textarea>
-            
-      <div class ="login-links">
-            <input type="submit" value="Add Book"> <br>
-              </div>
+            <textarea name="description" placeholder="Description" rows="5 " required></textarea>
+            <div class="login-links">
+                <input type="submit" value="Add Book"> <br>
+            </div>
         </form>
     </div>
 
