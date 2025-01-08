@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $author = $_POST['author'];
     $description = $_POST['description'];
-    $user_id = $_SESSION['user_id'];  // Corrected variable name
+    $user_id = $_SESSION['user_id'];   
 
     $sql = "INSERT INTO books (title, author, description, user_id) VALUES ('$title', '$author', '$description', '$user_id')";
 
