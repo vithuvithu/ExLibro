@@ -1,36 +1,34 @@
 <?php
-// Start the session
+ 
 session_start();
 
-// Include the database configuration
-include('../Backend/dbconf.php'); // Corrected path to dbconf.php
-
-// Check if the user is logged in
+ 
+include('../Backend/dbconf.php');  
+ 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
-$user_id = $_SESSION['user_id']; // Assuming user_id is stored in the session
+$user_id = $_SESSION['user_id']; 
 
-if (isset($_POST['delete'])) {
-    // Use a prepared statement to prevent SQL injection
+if (isset($_POST['delete'])) { 
     $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
-    $stmt->bind_param("i", $user_id); // "i" indicates the type is integer
+    $stmt->bind_param("i", $user_id);  
 
     if ($stmt->execute()) {
-        session_destroy(); // Destroy the session
+        session_destroy(); 
         header("Location: login.php"); // Redirect to login page
         exit();
     } else {
-        // If there is an error with the query
-        echo "Error: " . htmlspecialchars($stmt->error); // Sanitize output
+         
+        echo "Error: " . htmlspecialchars($stmt->error);  
     }
 
-    $stmt->close(); // Close the prepared statement
+    $stmt->close();  
 }
 
-$conn->close(); // Close the database connection
+$conn->close();  
 ?>
 <!DOCTYPE html>
 <html lang="en">

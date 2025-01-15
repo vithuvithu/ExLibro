@@ -1,28 +1,26 @@
 <?php
-session_start(); // Start the session
+session_start();  
+ 
+include('../Backend/dbconf.php');  
 
-// Include the database configuration
-include('../Backend/dbconf.php'); // Corrected path to dbconf.php
-
-// Initialize search variable
+ 
 $search = '';
 
-// Check if the search form is submitted
+ 
 if (isset($_POST['search'])) {
     $search = trim($_POST['search']);
 }
 
-// Fetch books from the database with search functionality
+ 
 $sql = "SELECT id, title, author, description FROM books";
 if ($search) {
-    // Sanitize the search input
+     
     $search = $conn->real_escape_string($search);
     $sql .= " WHERE title LIKE '%$search%' OR author LIKE '%$search%'";
 }
 
 $result = $conn->query($sql);
-
-// Check for query execution errors
+ 
 if (!$result) {
     die("Query failed: " . $conn->error);
 }

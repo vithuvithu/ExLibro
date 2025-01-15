@@ -1,6 +1,6 @@
 <?php
-// Adjust the path to point to the correct location of dbconf.php
-include('../Backend/dbconf.php'); // Use relative path to go up one directory
+
+include('../Backend/dbconf.php');  
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

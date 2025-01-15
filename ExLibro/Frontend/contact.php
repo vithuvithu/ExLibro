@@ -1,18 +1,18 @@
 <?php
-session_start(); // Start the session
+session_start();     
 
-// Initialize variables
+ 
 $name = $email = $message = "";
 $errors = [];
 
-// Check if the form is submitted
+ 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve and sanitize input
+    
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $message = trim($_POST['message']);
 
-    // Validate input
+    
     if (empty($name)) {
         $errors[] = "Name is required.";
     }
@@ -23,18 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Message cannot be empty.";
     }
 
-    // If there are no errors, process the data
+     
     if (empty($errors)) {
-        // Example: Send an email (you can also store it in a database)
-        $to = "your_email@example.com"; // Change to your email address
+       
+        $to = "your_email@example.com";  
         $subject = "New Contact Message from $name";
         $body = "Name: $name\nEmail: $email\nMessage:\n$message";
         $headers = "From: $email";
 
-        // Send the email
+        
         if (mail($to, $subject, $body, $headers)) {
-            // Redirect or show success message
-            header("Location: thank_you.php"); // Redirect to a thank you page
+             
+            header("Location: thank_you.php");  
             exit();
         } else {
             $errors[] = "There was an error sending your message. Please try again.";
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Have questions? Reach out to us! We are here to help with any inquiries related to ExLibro.
             </p>
 
-            <!-- Display error messages if any -->
+            
             <?php if (!empty($errors)): ?>
                 <div class="error-messages">
                     <?php foreach ($errors as $error): ?>

@@ -1,11 +1,11 @@
 <?php
-// Start the session
+ 
 session_start();
 
-// Include the database configuration
-include('../Backend/dbconf.php'); // Corrected path to dbconf.php
+ 
+include('../Backend/dbconf.php');  
 
-// Check if the user is logged in
+ 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -13,12 +13,12 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id']; 
 
-// Fetch user details from the database based on the session user ID
+ 
 $sql = "SELECT * FROM users WHERE id='$user_id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Fetch user details
+     
     $user = $result->fetch_assoc();
 } else {
     echo "User  not found.";
