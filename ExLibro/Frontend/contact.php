@@ -59,10 +59,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1><b>EXLIBRO</b></h1>
         <nav class="nav-bar">
             <ul class="nav-items">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <div class="nav-bar">
+                    <ul class="nav-items">
+                        <b><li><a href="index.php">   Home</a></li></b>
+                        <b><li><a href="about.php">About</a></li></b>
+                       <b><li><a href="login.php">Login</a></li></b> 
+                        <b><li><a href="contact.php">Contact</a></li></b>
+                    </ul>
+                </div>
             </ul>
         </nav>
         <h2><center>Contact Us</center></h2>
