@@ -10,13 +10,13 @@ session_start();
 include('../Backend/dbconf.php');
 
  
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
 
-$user_id = $_SESSION['user_id']; 
-$sql = "SELECT * FROM users WHERE id='$user_id'";
+$user_id = $_SESSION['id']; 
+$sql = "SELECT * FROM users WHERE id='$id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -49,8 +49,8 @@ if ($result->num_rows > 0) {
         </nav>
     </header>
     <main>
-        <h2>Welcome, <?php echo htmlspecialchars($user['username']); ?></h2>
-        <p>Your email: <?php echo htmlspecialchars($user['email']); ?></p>
+        <h2>Welcome, <?php echo htmlspecialchars($users['username']); ?></h2>
+        <p>Your email: <?php echo htmlspecialchars($users['email']); ?></p>
         <a href="edit_profile.php">Edit Profile</a>
     </main>
     <footer>
