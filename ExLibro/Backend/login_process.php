@@ -1,57 +1,33 @@
 <?php
- 
-include('dbconf.php');  
+
 session_start();
- 
-echo "Script started. <br>";
-
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-     
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $remember = isset($_POST['remember']) ? true : false;
-
-     
-    echo "Form submitted. Username: $username <br>";
-
-     
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);  
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
+function Authentication($conn,$username,$password)
+{
+    $query = "select username,password from login
+                where username ='$username' and password = '$password'";
+    $result = mysqli_query($conn,$query);
+    if ($result) {
          
-        $user = $result->fetch_assoc();
-        
-         
-        if (password_verify($password, $user['password'])) {
-           
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-
+        $resultCount = mysqli_num_rows($result);
+       
+        if ($resultCount == 1) {
              
-            if ($remember) {
-                setcookie('username', $username, time() + (86400 * 30), "/");  
-            }
-
-             
+            $_SESSION['loginuser'] = $username;
+            $message ="Login success";
+            
             header("Location: ../Frontend/profile.php");  
-            exit();
+
         } else {
-             
-            echo "Incorrect password.";
+        
+            $message = "Login failed please check your username and password";
         }
+        
     } else {
-         
-        echo "User  not found.";
-    }
-
      
-    $stmt->close();
+        $message = "Login failed please check your username and password";
+    }
+    return $message;
 }
+ 
 
-
-$conn->close();
 ?>

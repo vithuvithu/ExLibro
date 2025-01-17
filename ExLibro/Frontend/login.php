@@ -31,7 +31,7 @@
         
         <!-- Form to handle user login -->
          
-        <form class="usercred-form" action="Backend/login_process.php" method="POST">
+        <form class="usercred-form" action="../Backend/login_process.php" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             
